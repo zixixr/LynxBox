@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 添加多语言支持功能(中英文系统提示音)\n\n• 新增功能需求FR-045至FR-050:中英文系统提示音支持\n• 支持固件menuconfig配置和云端动态切换语言\n• 更新存储空间分配(NFR-023):系统提示音扩展至2MB\n• 新增NFR-024:多语言支持技术规格(热更新机制、优先级配置)\n• 从\"明确排除\"列表移除多语言支持\n• 在\"包含在内\"中添加多语言支持说明\n• 网络通信协议重新编号为NFR-025\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(powershell:*)",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
