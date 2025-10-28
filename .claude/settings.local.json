@@ -7,7 +7,18 @@
       "Bash(git push:*)",
       "Bash(powershell:*)",
       "WebSearch",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 完善LynxBox规格设计 - 触觉反馈、OTA升级与多模态交互\n\n主要更新:\n• 新增触觉反馈功能(FR-005c):偏心转子振动电机,支持多模态交互\n• 新增OTA固件升级功能(FR-051~FR-056):双分区方案,灰度发布,断点续传,安全回滚机制\n• 优化配网交互逻辑(FR-007):区分首次绑定与已绑定状态,支持连按2次按钮手动进入配网模式\n• 增强多模态反馈(FR-037~FR-040):预设音效+震动反馈,在线离线均可触发\n• 新增信号可靠性测试要求(NFR-010a~NFR-010c):WiFi/蓝牙/4G抗干扰与远距离性能测试\n• 扩展WiFi凭证存储上限:从10个增至30个\n• 扩展Flash要求:从4-8MB提升至≥8MB(推荐8MB或16MB),支持OTA双分区\n• 新增震动反馈相关系统提示音与模式定义\n• 更新spec版本至v3.7,plan文档改为英文模板格式\n\n技术影响:\n- 新增硬件组件:振动电机(ERM/LRA)及驱动电路\n- Flash分区调整:OTA双分区(ota_0 3MB + ota_1 3MB) + NVS + 资源分区\n- 云端API扩展:OTA升级检查、固件下载、灰度策略控制\n- 固件模块扩展:OTA管理器、震动控制器、多模态反馈协调器\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 完善LynxBox规格设计 - 触觉反馈、OTA升级与多模态交互\n\n主要更新:\n• 新增触觉反馈功能(FR-005c):偏心转子振动电机,支持多模态交互\n• 新增OTA固件升级功能(FR-051~FR-056):双分区方案,灰度发布,断点续传,安全回滚机制\n• 优化配网交互逻辑(FR-007):区分首次绑定与已绑定状态,支持连按2次按钮手动进入配网模式\n• 增强多模态反馈(FR-037~FR-040):预设音效+震动反馈,在线离线均可触发\n• 新增信号可靠性测试要求(NFR-010a~NFR-010c):WiFi/蓝牙/4G抗干扰与远距离性能测试\n• 扩展WiFi凭证存储上限:从10个增至30个\n• 扩展Flash要求:从4-8MB提升至≥8MB(推荐8MB或16MB),支持OTA双分区\n• 新增震动反馈相关系统提示音与模式定义\n• 更新spec版本至v3.7,plan文档改为英文模板格式\n\n技术影响:\n- 新增硬件组件:振动电机(ERM/LRA)及驱动电路\n- Flash分区调整:OTA双分区(ota_0 3MB + ota_1 3MB) + NVS + 资源分区\n- 云端API扩展:OTA升级检查、固件下载、灰度策略控制\n- 固件模块扩展:OTA管理器、震动控制器、多模态反馈协调器\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(claude mcp add-json:*)",
+      "Bash(claude mcp list)",
+      "WebFetch(domain:lynxaura.feishu.cn)",
+      "Bash(env)",
+      "Read(//c/Users/Administrator/.config/**)",
+      "Bash(npx:*)",
+      "mcp__lark-mcp__bitable_v1_app_create",
+      "mcp__lark-mcp__bitable_v1_appTableField_list",
+      "mcp__lark-mcp__bitable_v1_appTable_create",
+      "mcp__lark-mcp__bitable_v1_appTableRecord_create",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 语音唤醒词功能与美国市场认证要求 (v3.13)\n\n主要更新:\n• 新增语音唤醒词功能(FR-015c): \"Hello 灵犀\"唤醒词,支持本地唤醒词模型(ESP-SR)或云端ASR\n  - 仅在非休眠状态下启用,优先本地模型降低延迟\n  - 唤醒反馈:播放提示音或震动,进入对话模式\n  - 超时机制:15秒内无有效输入自动退出\n• 新增唤醒词性能指标(NFR-005):\n  - 识别准确率≥90%(安静和中等噪音环境)\n  - 误唤醒率<5%\n  - 响应时间≤500ms\n  - 功耗≤50mA\n  - 唤醒距离1-3米\n• 新增美国市场认证要求(NFR-028):\n  - FCC认证:Part 15 Subpart B/C(WiFi/BLE射频)\n  - UL/ETL安全认证:UL 62368-1,电池UL 2054/1642\n  - 儿童玩具:CPSIA, ASTM F963标准\n  - 能效认证(可选):ENERGY STAR, DoE Level VI\n  - 标识与包装要求\n• 更新用户故事1:新增验收场景4-6验证语音唤醒词功能\n• 更新核心功能、范围界定:明确包含语音唤醒词\n• 更新业务约束:明确中国市场(CCC/3C)和美国市场认证要求\n• NFR编号调整:NFR-006至NFR-027顺延+1(因新增NFR-005和NFR-028)\n• 更新Claude设置:新增MCP工具和WebFetch权限\n\n技术影响:\n- 需集成唤醒词检测算法(ESP-SR或云端ASR)\n- 待机状态麦克风持续监听,功耗优化需求\n- 硬件设计需满足美国认证标准(FCC/UL/ETL/CPSIA)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
