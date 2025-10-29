@@ -18,7 +18,13 @@
       "mcp__lark-mcp__bitable_v1_appTableField_list",
       "mcp__lark-mcp__bitable_v1_appTable_create",
       "mcp__lark-mcp__bitable_v1_appTableRecord_create",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 语音唤醒词功能与美国市场认证要求 (v3.13)\n\n主要更新:\n• 新增语音唤醒词功能(FR-015c): \"Hello 灵犀\"唤醒词,支持本地唤醒词模型(ESP-SR)或云端ASR\n  - 仅在非休眠状态下启用,优先本地模型降低延迟\n  - 唤醒反馈:播放提示音或震动,进入对话模式\n  - 超时机制:15秒内无有效输入自动退出\n• 新增唤醒词性能指标(NFR-005):\n  - 识别准确率≥90%(安静和中等噪音环境)\n  - 误唤醒率<5%\n  - 响应时间≤500ms\n  - 功耗≤50mA\n  - 唤醒距离1-3米\n• 新增美国市场认证要求(NFR-028):\n  - FCC认证:Part 15 Subpart B/C(WiFi/BLE射频)\n  - UL/ETL安全认证:UL 62368-1,电池UL 2054/1642\n  - 儿童玩具:CPSIA, ASTM F963标准\n  - 能效认证(可选):ENERGY STAR, DoE Level VI\n  - 标识与包装要求\n• 更新用户故事1:新增验收场景4-6验证语音唤醒词功能\n• 更新核心功能、范围界定:明确包含语音唤醒词\n• 更新业务约束:明确中国市场(CCC/3C)和美国市场认证要求\n• NFR编号调整:NFR-006至NFR-027顺延+1(因新增NFR-005和NFR-028)\n• 更新Claude设置:新增MCP工具和WebFetch权限\n\n技术影响:\n- 需集成唤醒词检测算法(ESP-SR或云端ASR)\n- 待机状态麦克风持续监听,功耗优化需求\n- 硬件设计需满足美国认证标准(FCC/UL/ETL/CPSIA)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 语音唤醒词功能与美国市场认证要求 (v3.13)\n\n主要更新:\n• 新增语音唤醒词功能(FR-015c): \"Hello 灵犀\"唤醒词,支持本地唤醒词模型(ESP-SR)或云端ASR\n  - 仅在非休眠状态下启用,优先本地模型降低延迟\n  - 唤醒反馈:播放提示音或震动,进入对话模式\n  - 超时机制:15秒内无有效输入自动退出\n• 新增唤醒词性能指标(NFR-005):\n  - 识别准确率≥90%(安静和中等噪音环境)\n  - 误唤醒率<5%\n  - 响应时间≤500ms\n  - 功耗≤50mA\n  - 唤醒距离1-3米\n• 新增美国市场认证要求(NFR-028):\n  - FCC认证:Part 15 Subpart B/C(WiFi/BLE射频)\n  - UL/ETL安全认证:UL 62368-1,电池UL 2054/1642\n  - 儿童玩具:CPSIA, ASTM F963标准\n  - 能效认证(可选):ENERGY STAR, DoE Level VI\n  - 标识与包装要求\n• 更新用户故事1:新增验收场景4-6验证语音唤醒词功能\n• 更新核心功能、范围界定:明确包含语音唤醒词\n• 更新业务约束:明确中国市场(CCC/3C)和美国市场认证要求\n• NFR编号调整:NFR-006至NFR-027顺延+1(因新增NFR-005和NFR-028)\n• 更新Claude设置:新增MCP工具和WebFetch权限\n\n技术影响:\n- 需集成唤醒词检测算法(ESP-SR或云端ASR)\n- 待机状态麦克风持续监听,功耗优化需求\n- 硬件设计需满足美国认证标准(FCC/UL/ETL/CPSIA)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(cat:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:open.feishu.cn)",
+      "Bash(npm view:*)",
+      "mcp__lark-mcp__wiki_v2_space_getNode"
     ],
     "deny": [],
     "ask": []
