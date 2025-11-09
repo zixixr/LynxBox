@@ -24,7 +24,14 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:open.feishu.cn)",
       "Bash(npm view:*)",
-      "mcp__lark-mcp__wiki_v2_space_getNode"
+      "mcp__lark-mcp__wiki_v2_space_getNode",
+      "Read(//c/Users/Administrator/AppData/Roaming/Claude/**)",
+      "mcp__xiaohongshu-mcp__check_login_status",
+      "mcp__lark-mcp__bitable_v1_appTable_list",
+      "mcp__xiaohongshu-mcp__search_feeds",
+      "mcp__xiaohongshu-mcp__user_profile",
+      "mcp__x-mcp__xhs_search_feeds",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  xiaohongshu-mcp:
+    image: xpzouying/xiaohongshu-mcp:latest
+    container_name: xiaohongshu-mcp
+    restart: unless-stopped
+    ports:
+      - "18060:18060"
+    volumes:
+      # 存储图片文件的目录
+      - ./images:/app/images
+      # 保存登录cookie的目录
+      - ./cookies:/app/cookies
+    environment:
+      # Chrome浏览器路径（容器内）
+      - ROD_BROWSER_BIN=/usr/bin/google-chrome
+      # Cookie文件路径
+      - COOKIE_FILE=/app/cookies/xiaohongshu_cookies.json
+    # 可选：设置时区为中国时区
+    # environment:
+    #   - TZ=Asia/Shanghai
