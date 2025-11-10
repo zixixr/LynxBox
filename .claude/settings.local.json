@@ -31,7 +31,8 @@
       "mcp__xiaohongshu-mcp__search_feeds",
       "mcp__xiaohongshu-mcp__user_profile",
       "mcp__x-mcp__xhs_search_feeds",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
